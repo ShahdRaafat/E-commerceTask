@@ -2,46 +2,49 @@
 @import "tw-animate-css";
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: #ffffff;
-    --foreground: #141c24;
-    --card: #ffffff;
-    --card-foreground: #2b6777;
-    --popover: #ffffff;
-    --popover-foreground: #2b6777;
-    --primary: #2b6777;
-    --primary-foreground: #ffffff;
-    --secondary: #c8d8e4;
-    --secondary-foreground: #2b6777;
-    --muted: #c8d8e4;
-    --muted-foreground: #52ab98;
-    --accent: #52ab98;
-    --accent-foreground: #ffffff;
-    --destructive: #f2f2f2;
-    --destructive-foreground: #2b6777;
-    --pink: #f4b6c2;
-  }
+@theme {
+  /* ==== Brand Colors ==== */
+  --color-primary-900: #1e4a55;
+  --color-primary-800: #245865;
+  --color-primary-700: #2b6777; /* main */
+  --color-primary-600: #3a7888;
+  --color-primary-500: #4a8a9a;
+  --color-primary-400: #6ca1af;
+  --color-primary-300: #8fb8c3;
+  --color-primary-200: #b5d0d7;
+  --color-primary-100: #dbe8ec;
 
-  .dark {
-    --background: #2b6777;
-    --foreground: #ffffff;
-    --card: #52ab98;
-    --card-foreground: #ffffff;
-    --popover: #2b6777;
-    --popover-foreground: #ffffff;
-    --primary: #52ab98;
-    --primary-foreground: #2b6777;
-    --secondary: #c8d8e4;
-    --secondary-foreground: #2b6777;
-    --muted: #52ab98;
-    --muted-foreground: #c8d8e4;
-    --accent: #c8d8e4;
-    --accent-foreground: #2b6777;
-    --destructive: #f2f2f2;
-    --destructive-foreground: #2b6777;
-    --pink: #f4b6c2;
-  }
+  --color-secondary-900: #2e6b5f;
+  --color-secondary-800: #3e8577;
+  --color-secondary-700: #4e9f8f;
+  --color-secondary-600: #52ab98; /* main */
+  --color-secondary-500: #6cb8a8;
+  --color-secondary-400: #86c5b8;
+  --color-secondary-300: #a0d2c8;
+  --color-secondary-200: #bbdfd9;
+  --color-secondary-100: #d6ece9;
+
+  /* ==== Neutral / Gray ==== */
+  --color-gray-900: #1a1a1a;
+  --color-gray-800: #333333;
+  --color-gray-700: #4d4d4d;
+  --color-gray-600: #666666;
+  --color-gray-500: #808080;
+  --color-gray-400: #999999;
+  --color-gray-300: #b3b3b3;
+  --color-gray-200: #d9d9d9;
+  --color-gray-100: #f2f2f2; /* main */
+
+  /* ==== Accent Light ==== */
+  --color-light-500: #c8d8e4; /* main */
+  --color-light-400: #d7e2ec;
+  --color-light-300: #e4ebf2;
+  --color-light-200: #eef3f7;
+  --color-light-100: #f7fafc;
+
+  /* ==== Base ==== */
+  --color-white: #ffffff;
+  --color-black: #000000;
 }
 
 @custom-variant dark (&:is(.dark *));
