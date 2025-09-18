@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import ProductsList from "./components/products/ProductsList";
 export default function Home() {
   return (
     <>
-      <Button>Click Me</Button>
-      <div>Hi pray for me</div>
+      <ProductsList />
     </>
   );
 }
