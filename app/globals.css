@@ -1,26 +1,96 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #141c24;
+    --card: #ffffff;
+    --card-foreground: #2b6777;
+    --popover: #ffffff;
+    --popover-foreground: #2b6777;
+    --primary: #2b6777;
+    --primary-foreground: #ffffff;
+    --secondary: #c8d8e4;
+    --secondary-foreground: #2b6777;
+    --muted: #c8d8e4;
+    --muted-foreground: #52ab98;
+    --accent: #52ab98;
+    --accent-foreground: #ffffff;
+    --destructive: #f2f2f2;
+    --destructive-foreground: #2b6777;
+    --pink: #f4b6c2;
+  }
+
+  .dark {
+    --background: #2b6777;
+    --foreground: #ffffff;
+    --card: #52ab98;
+    --card-foreground: #ffffff;
+    --popover: #2b6777;
+    --popover-foreground: #ffffff;
+    --primary: #52ab98;
+    --primary-foreground: #2b6777;
+    --secondary: #c8d8e4;
+    --secondary-foreground: #2b6777;
+    --muted: #52ab98;
+    --muted-foreground: #c8d8e4;
+    --accent: #c8d8e4;
+    --accent-foreground: #2b6777;
+    --destructive: #f2f2f2;
+    --destructive-foreground: #2b6777;
+    --pink: #f4b6c2;
+  }
 }
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+  }
 }
