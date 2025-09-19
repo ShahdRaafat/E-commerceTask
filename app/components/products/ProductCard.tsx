@@ -1,5 +1,4 @@
 import { Product } from "@/app/types/product";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,8 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ShoppingCartIcon } from "lucide-react";
 import Image from "next/image";
+import AddToCartButton from "./AddToCartButton";
+import { CartProvider } from "@/app/_contexts/CartContext";
 
 interface ProductCardProps {
   product: Product;
@@ -31,10 +31,8 @@ function ProductCard({ product }: ProductCardProps) {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex justify-between items-center mt-auto ">
-        <p>{product.price}</p>
-        <Button className=" rounded-4xl" size="lg">
-          <ShoppingCartIcon />
-        </Button>
+        <p>${product.price}</p>
+        <AddToCartButton product={product} />
       </CardContent>
     </Card>
   );
