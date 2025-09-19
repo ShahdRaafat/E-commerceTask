@@ -4,6 +4,7 @@ import "@/app/_styles/globals.css";
 
 import Header from "@/app/components/Nav/Header";
 import { CartProvider } from "./_contexts/CartContext";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,6 +28,7 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           <main className="max-w-7xl mx-auto">{children}</main>
+          <Toaster />
         </CartProvider>
       </body>
     </html>
