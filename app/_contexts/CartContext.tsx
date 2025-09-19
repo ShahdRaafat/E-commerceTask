@@ -43,6 +43,18 @@ function CartProvider({ children }: CartContextProviderProps) {
       ),
     });
   }
+
+  function getTotalItems() {
+    const totalItems = cart.products.reduce((acc, p) => acc + p.quantity, 0);
+    return totalItems;
+  }
+  function getTotalPrice() {
+    const totalPrice = cart.products.reduce(
+      (acc, p) => acc + p.quantity * p.price,
+      0
+    );
+    return totalPrice;
+  }
   return (
     <CartContext.Provider
       value={{
@@ -51,6 +63,8 @@ function CartProvider({ children }: CartContextProviderProps) {
         deleteFromCart,
         increaseQuantity,
         decreaseQuantity,
+        getTotalItems,
+        getTotalPrice,
       }}
     >
       {children}

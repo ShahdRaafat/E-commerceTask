@@ -25,7 +25,7 @@ function CartItem({ item }: CartItemProps) {
             fill
           />
         </div>
-        <CardTitle>{item.title}</CardTitle>{" "}
+        <CardTitle className="text-gray-900">{item.title}</CardTitle>{" "}
       </div>
       <div className="flex-1 flex items-center ">
         <div className="flex items-center flex-1  ">
@@ -47,10 +47,10 @@ function CartItem({ item }: CartItemProps) {
         </div>
 
         <p className="w-20 text-center font-bold text-primary-500">
-          ${item.price}
+          ${item.price.toFixed(2)}
         </p>
         <p className="w-20 text-center font-bold text-primary-500">
-          ${totalPrice}
+          ${totalPrice.toFixed(2)}
         </p>
       </div>
       <div>

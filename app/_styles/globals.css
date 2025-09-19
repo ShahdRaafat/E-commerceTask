@@ -97,3 +97,6 @@
     @apply bg-background text-foreground;
   }
 }
+body {
+  color: var(--color-gray-800);
+}
