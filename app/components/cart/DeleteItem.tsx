@@ -16,7 +16,7 @@ function DeleteItem({ item, onDelete }: DeleteItemProps) {
 
   return (
     <Button
-      size="icon"
+      size="sm"
       variant="ghost"
       className="text-red-500 hover:bg-red-100 rounded-full"
       onClick={handleClick}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
+import CartIcon from "./CartIcon";
 function Navbar() {
   return (
     <nav>
@@ -14,13 +15,7 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <Link
-            href="/cart"
-            className={`hover:text-primary-500 transition-colors 
-              }`}
-          >
-            <ShoppingCart />
-          </Link>
+          <CartIcon />
         </li>
       </ul>
     </nav>
