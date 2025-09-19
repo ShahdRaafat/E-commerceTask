@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable}  antialiased`}>
+      <body className={`${inter.variable}  antialiased bg-gray-100`}>
         <CartProvider>
           <Header />
           <main className="max-w-7xl mx-auto">{children}</main>

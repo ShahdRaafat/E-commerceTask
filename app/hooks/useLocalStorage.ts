@@ -1,3 +1,4 @@
+//need to review this
 "use client";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
@@ -5,13 +6,15 @@ export function useLocalStorage<T>(
   key: string,
   initialValue: T
 ): [T, Dispatch<SetStateAction<T>>] {
-  const [value, setValue] = useState<T>(function () {
-    if (typeof window === "undefined") {
-      return initialValue; // server render fallback
-    }
+  const [value, setValue] = useState<T>(initialValue);
+
+  // load from localStorage after mount to fixx the hydration error
+  useEffect(() => {
     const storedValue = localStorage.getItem(key);
-    return storedValue ? JSON.parse(storedValue) : initialValue;
-  });
+    if (storedValue) {
+      setValue(JSON.parse(storedValue));
+    }
+  }, [key]);
 
   useEffect(
     function () {
