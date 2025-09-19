@@ -21,8 +21,38 @@ function CartProvider({ children }: CartContextProviderProps) {
       });
     }
   }
+
+  function deleteFromCart(productId: number) {
+    setCart({
+      products: cart.products.filter((p) => p.id !== productId),
+    });
+  }
+
+  function increaseQuantity(productId: number) {
+    setCart({
+      products: cart.products.map((p) =>
+        p.id === productId ? { ...p, quantity: p.quantity + 1 } : p
+      ),
+    });
+  }
+
+  function decreaseQuantity(productId: number) {
+    setCart({
+      products: cart.products.map((p) =>
+        p.id === productId ? { ...p, quantity: p.quantity - 1 } : p
+      ),
+    });
+  }
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        deleteFromCart,
+        increaseQuantity,
+        decreaseQuantity,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

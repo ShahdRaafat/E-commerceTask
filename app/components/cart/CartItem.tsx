@@ -3,12 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
 import { Minus, Plus, Trash } from "lucide-react";
 import Image from "next/image";
+import DeleteItem from "./DeleteItem";
+import { useCart } from "@/app/_contexts/CartContext";
 
 interface CartItemProps {
   item: CartItemType;
 }
 
 function CartItem({ item }: CartItemProps) {
+  const { deleteFromCart, increaseQuantity, decreaseQuantity } = useCart();
   const totalPrice = item.quantity * item.price;
 
   return (
@@ -26,11 +29,19 @@ function CartItem({ item }: CartItemProps) {
       </div>
       <div className="flex-1 flex items-center ">
         <div className="flex items-center flex-1  ">
-          <Button size="icon" className="rounded-full">
+          <Button
+            size="icon"
+            className="rounded-full"
+            onClick={() => decreaseQuantity(item.id)}
+          >
             <Minus />
           </Button>
           <span className="px-3">{item.quantity}</span>
-          <Button size="icon" className="rounded-full">
+          <Button
+            size="icon"
+            className="rounded-full"
+            onClick={() => increaseQuantity(item.id)}
+          >
             <Plus />
           </Button>
         </div>
@@ -43,13 +54,7 @@ function CartItem({ item }: CartItemProps) {
         </p>
       </div>
       <div>
-        <Button
-          size="icon"
-          variant="ghost"
-          className="text-red-500 hover:bg-red-100 rounded-full"
-        >
-          <Trash />
-        </Button>
+        <DeleteItem item={item} onDelete={deleteFromCart} />
       </div>
     </Card>
   );
