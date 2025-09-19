@@ -1,14 +1,13 @@
 "use client";
 
 import { useCart } from "@/app/_contexts/CartContext";
+import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardHeader,
-  CardTitle,
   CardContent,
   CardFooter,
+  CardHeader,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import Heading from "../Heading";
 const SHIPPING_COST = 10;
 function CartSummary() {

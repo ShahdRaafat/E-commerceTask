@@ -1,4 +1,3 @@
-import Heading from "@/app/components/Heading";
 import CartList from "../components/cart/CartList";
 import CartSummary from "../components/cart/CartSummary";
 

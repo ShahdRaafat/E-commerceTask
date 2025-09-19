@@ -1,10 +1,10 @@
+import { useCart } from "@/app/_contexts/CartContext";
 import { CartItemType } from "@/app/types/cart";
 import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
-import { Minus, Plus, Trash } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import DeleteItem from "./DeleteItem";
-import { useCart } from "@/app/_contexts/CartContext";
 
 interface CartItemProps {
   item: CartItemType;

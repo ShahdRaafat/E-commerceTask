@@ -38,9 +38,11 @@ function CartProvider({ children }: CartContextProviderProps) {
 
   function decreaseQuantity(productId: number) {
     setCart({
-      products: cart.products.map((p) =>
-        p.id === productId ? { ...p, quantity: p.quantity - 1 } : p
-      ),
+      products: cart.products
+        .map((p) =>
+          p.id === productId ? { ...p, quantity: p.quantity - 1 } : p
+        )
+        .filter((p) => p.quantity > 0),
     });
   }
 
