@@ -14,7 +14,7 @@ interface ProductCardProps {
 }
 function ProductCard({ product }: ProductCardProps) {
   return (
-    <Card className="bg-primary-100 rounded-2xl transition-transform duration-300 hover:-translate-y-1 ">
+    <Card className="bg-light-100 rounded-2xl transition-transform duration-300 hover:-translate-y-1 ">
       <div className="relative w-full h-50 hover:scale-105 transition-transform duration-300">
         <Image
           src={product.image}
