@@ -9,14 +9,20 @@ function CartList() {
   const totalItems = getTotalItems();
   return (
     <div className=" lg:col-span-4 ">
-      <div className=" bg-white rounded-2xl ">
-        <Heading>Cart Items {`(${totalItems})`}</Heading>
-        <div className="px-4 py-3">
-          {cart.products.map((item) => (
-            <CartItem item={item} key={item.id} />
-          ))}
+      {totalItems > 0 ? (
+        <div className=" bg-white rounded-2xl ">
+          <Heading>Cart Items {`(${totalItems})`}</Heading>
+          <div className="px-4 py-3">
+            {cart.products.map((item) => (
+              <CartItem item={item} key={item.id} />
+            ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <p className="text-gray-800 text-xl absolute top-[50%] left-[50%] -translate-x-2/4">
+          Your cart is empty.
+        </p>
+      )}
     </div>
   );
 }

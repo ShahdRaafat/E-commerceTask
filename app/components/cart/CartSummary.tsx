@@ -20,33 +20,37 @@ function CartSummary() {
 
   return (
     <div className="col-span-2">
-      <Card className="h-fit p-0 pb-4  bg-gray-50 rounded-2xl shadow-md">
-        <CardHeader className="p-0">
-          <Heading>Order Summary</Heading>
-        </CardHeader>
+      {totalItems > 0 ? (
+        <Card className="h-fit p-0 pb-4  bg-gray-50 rounded-2xl shadow-md">
+          <CardHeader className="p-0">
+            <Heading>Order Summary</Heading>
+          </CardHeader>
 
-        <CardContent className="space-y-3">
-          <div className="flex justify-between text-gray-700">
-            <span>Items ({totalItems})</span>
-            <span>${subtotal.toFixed(2)}</span>
-          </div>
-          <div className="flex justify-between text-gray-700">
-            <span>Shipping</span>
-            <span>${SHIPPING_COST.toFixed(2)}</span>
-          </div>
+          <CardContent className="space-y-3">
+            <div className="flex justify-between text-gray-700">
+              <span>Items ({totalItems})</span>
+              <span>${subtotal.toFixed(2)}</span>
+            </div>
+            <div className="flex justify-between text-gray-700">
+              <span>Shipping</span>
+              <span>${SHIPPING_COST.toFixed(2)}</span>
+            </div>
 
-          <hr className="my-2" />
+            <hr className="my-2" />
 
-          <div className="flex justify-between font-semibold text-lg text-gray-900">
-            <span>Total</span>
-            <span>${total.toFixed(2)}</span>
-          </div>
-        </CardContent>
+            <div className="flex justify-between font-semibold text-lg text-gray-900">
+              <span>Total</span>
+              <span>${total.toFixed(2)}</span>
+            </div>
+          </CardContent>
 
-        <CardFooter>
-          <Button className="w-full rounded-2xl">Checkout</Button>
-        </CardFooter>
-      </Card>
+          <CardFooter>
+            <Button className="w-full rounded-2xl">Checkout</Button>
+          </CardFooter>
+        </Card>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
